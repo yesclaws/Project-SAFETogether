@@ -1,0 +1,7 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content if needed */
+  height: 100vh; /* Set a height to center the content within the viewport */
+}

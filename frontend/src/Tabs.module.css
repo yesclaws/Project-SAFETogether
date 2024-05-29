@@ -1,0 +1,17 @@
+.tab {
+    font-weight: 500;
+    height: rem(50);
+    background-color: transparent;
+    align-items: center;
+    gap: rem(10); /* Add some spacing between the icon and text */
+
+    &:hover {
+      background-color: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-7));
+    }
+  
+    &[data-active] {
+      background-color: var(--mantine-color-blue-light);
+      color: var(--mantine-color-blue-light-color);
+    }
+  }
+  
