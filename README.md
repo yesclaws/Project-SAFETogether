@@ -31,7 +31,7 @@ This project uses the following libraries and dependencies:
 
 1. Clone the repository to your local machine: 
 ```
-git clone https://github.com/yell0wbear/DSA3101-2310-05-sec.git
+git clone https://github.com/yesclaws/Project-SAFETogether.git
 ```
 
 2. Change directory to the project directory 
