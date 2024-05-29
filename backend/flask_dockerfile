@@ -1,0 +1,18 @@
+ARG CUDA_IMAGE="12.1.1-devel-ubuntu22.04"
+FROM nvidia/cuda:${CUDA_IMAGE}
+
+# We need to set the host to 0.0.0.0 to allow outside access
+ENV HOST 0.0.0.0
+
+WORKDIR /app
+COPY requirements.txt requirements.txt
+COPY app.py app.py
+COPY incident_creation incident_creation
+COPY setup.sh setup.sh
+COPY llm llm
+COPY dashboard dashboard
+EXPOSE 5000
+
+RUN sh setup.sh
+
+ENTRYPOINT python3 -u -m app
