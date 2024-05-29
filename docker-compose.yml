@@ -1,0 +1,42 @@
+version: "1"
+
+services:
+  app:
+    build:
+      context: ./backend
+      dockerfile: flask_dockerfile
+    ports:
+      - "9001:5000"
+    volumes:
+      - "./backend/app.py:/app/app.py"
+      - "./backend/incident_creation:/app/incident_creation"
+    depends_on:
+      - db
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+              
+  db:
+    image: mysql:8.0.34
+    ports:
+      - "33060:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./backend/incident_creation/incidentlog.sql:/docker-entrypoint-initdb.d/incidentlog.sql
+
+  front-end:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment: 
+      - VITE_API_TOKEN=AIzaSyB0v_mzVewnJ31mzDVoJEGCLLBloX0RvVw
+    volumes:
+      - "./frontend/src:/app/src"
+      - "./frontend/vite.config.ts:/app/vite.config.ts"
+    ports:
+      - "5173:5173"
