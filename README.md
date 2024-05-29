@@ -4,7 +4,7 @@
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Our project, titled “SafeTogether”,  revolves around the development of a comprehensive system for actively monitoring criminal incidents within the National University of Singapore (NUS) campus. It seeks to provide end-users, the security personnel, with a working and value-adding tool for enhancing safety and security within the campus.
 
 
 
