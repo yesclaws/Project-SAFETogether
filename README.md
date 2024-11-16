@@ -41,7 +41,7 @@ This can be done as follows :
 
 ```
 npm install -g create-vite
-npm install site —save-dev
+npm install site -save-dev
 npm install vite 
 npm install react react-dom axios @mui/material
 npm install plotly.js react-plotly.js @devexpress/dx-react-chart d3-scale-chromatic
